@@ -1,0 +1,513 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  z-index: 999;
+}
+
+/* Navbar styles */
+.nav {
+  height: 3.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+/* Navbar logo and toggle button */
+.nav__logo,
+.nav__burger,
+.nav__close {
+  color: green;
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-weight: bold;
+}
+
+.nav__logo a {
+  font-size: 2rem;
+}
+
+.nav__logo i {
+  font-weight: initial;
+  font-size: 1.25rem;
+}
+
+.nav__toggle {
+  display: none; /* Hide the toggle button by default */
+}
+
+/* Navbar menu */
+.nav__menu {
+  position: absolute;
+  top: 100%; /* Position the menu below the toggle button */
+  left: 0; /* Align the menu with the left edge of the header */
+  width: 100%;
+  background-color: white; /* Adjust as needed */
+  /* box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3); */
+  z-index: 999;
+  display: none; /* Hide the menu by default */
+}
+
+.nav__menu.show-menu {
+  display: block; /* Show the menu when the show-menu class is applied */
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.nav__link {
+  color: green; /* Adjust as needed */
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  transition: background-color .3s;
+ 
+}
+
+
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 717px) {
+  .nav__toggle {
+    display: block; /* Show the toggle button on small screens */
+  }
+
+  .nav__menu {
+    position: fixed; /* Make the menu fixed for small screens */
+    top: 3.3rem; /* Adjust according to your header height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 3.3rem); /* Adjust the height to fit the viewport */
+    overflow-y: auto; /* Allow vertical scrolling */
+    display: none; /* Hide the menu by default */
+  }
+
+  .nav__menu.show-menu {
+    display: block; /* Show the menu when the show-menu class is applied */
+  }
+
+  .nav__list {
+    background-color: white; /* Adjust the background color of the menu */
+    padding-top: 1rem; /* Add some top padding */
+  }
+}
+
+/* Responsive styles for larger screens */
+@media screen and (min-width: 718px) {
+  .nav__toggle {
+    display: none; /* Hide the toggle button on larger screens */
+  }
+
+  .nav__menu {
+    position: static; /* Make the menu static for larger screens */
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-end; /* Align the menu items to the right */
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2rem;
+    padding: 0;
+    color: #000000;
+  }
+}
+
+  
+.homeheader{
+    width: 100%; 
+    height: 100vh;
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.homeheader::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+.headtitle{
+    color: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headtitle h1{
+    font-size: 80px;
+    color: rgb(5, 178, 66);
+    filter: drop-shadow(0 0 20px rgb(1, 62, 1));
+    text-align: center;
+    
+}
+.headtitle p{
+    font-size: 25px;
+    filter: drop-shadow(0 0 20px rgb(1, 62, 1));
+    text-align: center;
+    margin: 40px 0;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #7eb88c;
+    background-color: #e0efe4;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    border-radius: 40px 40px 40px 40px;
+    padding: 16px 24px 16px 28px;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: 0.2s;
+    box-shadow: 0px 0px 5px 0px rgb(5, 178, 66), 10px -1px 1px 0px rgb(5, 178, 66);
+   }
+   
+   button:hover {
+    color: rgb(5, 178, 66);
+    background-color: #e5f5e6;
+    box-shadow: -2px -1px 8px 0px #118408, 2px 1px 8px 0px rgba(95, 231, 109, 0.48);
+   }
+   
+   button:active {
+    box-shadow: none;
+   }
+ 
+
+   /* ==================About us================ */
+
+  .about{
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    /* background-color: #e5f5e6; */
+    color: #118408;
+    padding: 30px;
+  
+
+  }
+  .about__data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+   padding: 20px;
+   border-radius: 20px;
+    background-color: #e5f5e6;
+  }
+
+  /* =================Services================ */
+  
+  .service{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+  }
+  .service__data{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    /* border-radius: 20px; */
+    background-color: #e5f5e6;
+
+  }
+  .sone{
+    background-color: #fff;
+    color: #118408;
+    box-shadow: 0 0 5px 0px rgb(5, 178, 66), 10px -1px 1px 0px rgb(5, 178, 66);
+  }
+  .stwo{
+    background-color: #fff;
+    color: #118408;
+    box-shadow: 0 0 5px 0px rgb(5, 178, 66), 10px -1px 1px 0px rgb(5, 178, 66);
+  }
+
+  .headingdesign {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #080808;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+  .eleven h1 {
+    font-size:30px;text-align:center; line-height:1.5em; padding-bottom:45px; font-family:"Playfair Display", serif; text-transform:uppercase;letter-spacing: 2px; color:#111;
+  }
+  
+  
+  .eleven h1:before {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 60%;
+    left:50%; margin-left:-30%;
+    height: 1px;
+    content: "";
+    background-color: #777; z-index: 4;
+  }
+  .eleven h1:after {
+    position:absolute;
+    width:40px; height:40px; left:50%; margin-left:-20px; bottom:0px;
+    content: '\00a7'; font-size:30px; line-height:40px; color:#118408;
+    font-weight:400; z-index: 5;
+    display:block;
+    background-color:#f8f8f8;
+  }
+  
+  /* ===============twocontent================ */
+
+  .twocontent{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+  .top_twocontent{
+     
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-direction: column; */
+    gap: 20px;
+    padding: 40px;
+    background-color: #e5f5e6;
+    color: #118408;
+  }
+  .twocontent__data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #e5f5e6;
+
+  }
+  .twocontent__data h1{
+    font-size: 50px;
+    font-weight: 500;
+    color: #118408;
+    
+  }
+  .twocontent__data p{
+    font-size: 20px;
+    /* font-weight: 500; */
+    color: black; 
+  }
+
+  .twocontent__img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .twocontent__data_info{
+    text-align: left;
+    font-size: 14px !important;
+    font-weight: 200 !important;
+  }
+  .twocontent__data_info i{
+    margin: 10px;
+    font-size: 14px !important;
+  }
+  .twocontent__img img{
+    width: 90%;
+  }
+
+  /* Style for section */
+.section {
+  padding: 30px;
+  background-color: #f7f7f7;
+}
+
+/* Style for section title */
+.title h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style for benefit subtitle */
+.subtitle {
+  color: #118408;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style for benefit points */
+.benefit p {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style for angle-right icon */
+.fas.fa-angle-right {
+  color: #118408;
+  margin-right: 10px;
+}
+
+/* Style for content div */
+.content {
+  margin-top: 20px;
+}
+
+/* Style for content paragraphs */
+.content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Style for benefit containers */
+.benefit {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for benefit containers */
+.benefit:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for benefit titles */
+.benefit h3 {
+  margin-bottom: 15px;
+}
+
+/* Style for benefit points */
+.benefit p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Style for angle-right icon */
+.fas.fa-angle-right {
+  margin-right: 10px;
+  color: #118408;
+}
+
+/* Style for icon on hover */
+.benefit:hover .fas.fa-angle-right {
+  color: #118408;
+}
+
+footer {
+  background-color: #333; /* Set background color */
+  color: #fff; /* Set text color */
+  padding: 20px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+ 
+}
+.footer_upper{
+  display: flex;
+  justify-content: space-around;
+}
+.footer-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.footer-contact{
+  margin-bottom: 10px;
+  text-align: left;
+}
+.footer-contact p {
+  margin: 5px;
+  font-size: 16px;
+
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f1c40f; /* Change color on hover */
+}
+
+.footer-copyright {
+  margin-top: 10px;
+  font-size: 14px;
+}
